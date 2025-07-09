@@ -1,0 +1,7 @@
+**/node_modules/
+# Optional: ignore .next, .env, etc., in all subdirectories
+**/.next/
+**/.env
+**/.env.local
+**/dist/
+**/.turbo/

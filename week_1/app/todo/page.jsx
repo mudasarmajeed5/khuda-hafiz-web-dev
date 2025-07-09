@@ -103,7 +103,6 @@ const TodoApp = () => {
       <div className="min-h-[80vh] mt-2 bg-[var(--color-background)] py-6 px-4">
         <div className="max-w-3xl mx-auto space-y-6">
 
-          {/* ✅ Compact Bar Form */}
           <form
             onSubmit={handleSubmit}
             className="flex flex-wrap md:flex-nowrap items-center gap-2 bg-white p-3 rounded-md shadow-sm border"

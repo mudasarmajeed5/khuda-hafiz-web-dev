@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-6 py-4 bg-[var(--color-background)] shadow-md">
       <Link href="/" className="text-xl font-bold text-[var(--color-primary)]">
-        JavaScript MiniApps
+        MiniApps
       </Link>
 
       <ul className="flex gap-4">
@@ -44,7 +44,7 @@ const Navbar = () => {
 
       <Link
         href="https://github.com/mudasarmajeed5"
-        className="text-sm font-medium text-[var(--color-success)] hover:underline"
+        className="text-sm font-medium underline hover:underline-offset-4 text-[var(--color-dark)] hover:underline"
         target="_blank"
       >
         Follow me

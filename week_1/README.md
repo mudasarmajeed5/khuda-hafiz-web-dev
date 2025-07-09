@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+{
+    "coord": {
+        "lon": 67.0097,
+        "lat": 30.199
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 301.93,
+        "feels_like": 302.42,
+        "temp_min": 301.93,
+        "temp_max": 301.93,
+        "pressure": 1001,
+        "humidity": 49,
+        "sea_level": 1001,
+        "grnd_level": 803
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.14,
+        "deg": 134,
+        "gust": 4.14
+    },
+    "clouds": {
+        "all": 1
+    },
+    "dt": 1752077613,
+    "sys": {
+        "country": "PK",
+        "sunrise": 1752021436,
+        "sunset": 1752071799
+    },
+    "timezone": 18000,
+    "id": 1167528,
+    "name": "Quetta",
+    "cod": 200
+}

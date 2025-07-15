@@ -4,15 +4,12 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
-import { signOut } from "firebase/auth";
-import { Button } from "@/components/ui/button";
+import { ResizableHandleDemo } from "../components/DashboardSidebar";
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const handleSignout = async () => {
-    await signOut(auth);
-  }
+  
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -31,13 +28,12 @@ export default function Home() {
   if (!user) return null;
 
   return (
-    <main className="p-6 flex justify-center items-center text-black flex-col mt-20 max-w-lg mx-auto">
-      <h1 className="text-2xl font-semibold mb-2">Welcome to your Dashboard</h1>
-      <p className="text-muted-foreground">Email: {user.email}</p>
-      <p className="text-sm text-muted-foreground mt-1">userId: {user.uid}</p>
-      <Button variant={"destructive"}
-        onClick={handleSignout}
-        className="mt-3 cursor-pointer">Logout</Button>
-    </main>
+    <div className="min-w-screen min-h-screen">
+      <div className="py-2 flex justify-between shadow-md shadow-gray-200 px-4">
+        <div>Hello, <span className="font-bold">Youre signed in as {user.email}</span></div>
+        <div className="font-semibold underline hover:underline-offset-4 cursor-pointer">Team: Khuda Hafiz</div>
+      </div>
+      <ResizableHandleDemo />
+    </div>
   );
 }

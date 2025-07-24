@@ -5,3 +5,6 @@
 **/.env.local
 **/dist/
 **/.turbo/
+
+# Local Netlify folder
+.netlify

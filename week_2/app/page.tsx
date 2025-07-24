@@ -5,6 +5,7 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { ResizableHandleDemo } from "../components/DashboardSidebar";
+import { ModeToggle } from "@/components/ModeToggle";
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -28,10 +29,13 @@ export default function Home() {
   if (!user) return null;
 
   return (
-    <div className="min-w-screen min-h-screen">
-      <div className="py-2 flex justify-between shadow-md shadow-gray-200 px-4">
-        <div>Hello, <span className="font-bold">Youre signed in as {user.email}</span></div>
-        <div className="font-semibold underline hover:underline-offset-4 cursor-pointer">Team: Khuda Hafiz</div>
+    <div className="h-[100vh-80px)]">
+      <div className="p-2 flex justify-between items-center shadow-md shadow-gray-200 dark:shadow-gray-900">
+        <div>Hello, <span className="font-bold">{user.email?.split("@")[0]}</span></div>
+        <div className="flex gap-2 items-center">
+          <span className="font-semibold">khudahafiz.co</span>
+          <ModeToggle/>
+        </div>
       </div>
       <ResizableHandleDemo />
     </div>

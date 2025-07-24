@@ -33,7 +33,8 @@ const SignUp = () => {
         try {
             const user = await signUpWithGoogle();
             if (user) {
-                router.push("/login")
+                router.push("/")
+                toast.success("Signup Successfull");
             }
         } catch (err) {
             const error = err as Error;

@@ -8,7 +8,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { signIn } from "@/lib/auth";
 import { toast } from "sonner";
-
+import { ResetPasswordDialog } from "@/components/PasswordResetDialog";
 const Login = () => {
     const router = useRouter();
     const [email, setEmail] = useState("");
@@ -58,13 +58,12 @@ const Login = () => {
                         required
                     />
                 </div>
-
+                <ResetPasswordDialog />
                 <Button type="submit" className="w-full mb-3">
                     Login
                 </Button>
-
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                    Don't have an account?{" "}
+                    Dont have an account?{" "}
                     <Link href="/signup" className="text-primary font-medium hover:underline">
                         Sign up
                     </Link>

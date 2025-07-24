@@ -6,11 +6,12 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { ResizableHandleDemo } from "../components/DashboardSidebar";
 import { ModeToggle } from "@/components/ModeToggle";
+import DashboardLoader from "@/components/DashboardLoader";
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -25,7 +26,11 @@ export default function Home() {
     return () => unsubscribe();
   }, []);
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) {
+    return (
+      <DashboardLoader/>
+    );
+  }
   if (!user) return null;
 
   return (
@@ -34,7 +39,7 @@ export default function Home() {
         <div>Hello, <span className="font-bold">{user.email?.split("@")[0]}</span></div>
         <div className="flex gap-2 items-center">
           <span className="font-semibold">khudahafiz.co</span>
-          <ModeToggle/>
+          <ModeToggle />
         </div>
       </div>
       <ResizableHandleDemo />

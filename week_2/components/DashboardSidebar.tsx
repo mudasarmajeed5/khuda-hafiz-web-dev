@@ -46,16 +46,16 @@ export function ResizableHandleDemo() {
     return (
         <ResizablePanelGroup
             direction="horizontal"
-            className="rounded-lg border min-h-[calc(100vh-40px)]"
+            className="rounded-lg min-h-[calc(100vh-60px)]"
         >
             <ResizablePanel defaultSize={20}>
-                <div className="flex min-h-[calc(100vh-40px)] border flex-col justify-between w-full px-4 py-6">
+                <div className="flex min-h-[calc(100vh-60px)] flex-col justify-between w-full px-4 py-6">
                     <div className="flex flex-col gap-3 w-full">
                         {navItems.map((item) => (
                             <Button
                                 key={item.label}
                                 variant="ghost"
-                                className="justify-start gap-3 w-full text-base"
+                                className="justify-start cursor-pointer gap-3 w-full text-base"
                             >
                                 <item.icon className="w-5 h-5" />
                                 {item.label}
@@ -65,7 +65,7 @@ export function ResizableHandleDemo() {
                     <Button
                         variant="secondary"
                         onClick={handleSignout}
-                        className="justify-start gap-3 w-full text-base"
+                        className="justify-start cursor-pointer gap-3 w-full text-base"
                     >
                         <LogOut className="w-5 h-5" />
                         Logout
@@ -77,7 +77,7 @@ export function ResizableHandleDemo() {
             <ResizableHandle withHandle />
 
             <ResizablePanel defaultSize={75}>
-                <div className="p-4">
+                <div className="">
                     <ChatBot />
                     <Weather />
                 </div>

@@ -85,8 +85,27 @@ const Weather = () => {
                 </Button>
             </div>
 
-            {!edata ? (
-                <Skeleton className="w-full h-32 rounded-md" />
+            {loader || !edata ? (
+                <Card className="shadow-lg">
+                    <CardContent className="p-6 grid md:grid-cols-2 gap-6">
+                        <div className="flex flex-col items-center">
+                            <Skeleton className="w-[120px] h-[120px] rounded-full" />
+                            <div className="flex flex-col gap-3 mt-4 w-full items-start">
+                                <Skeleton className="w-40 h-5" />
+                                <Skeleton className="w-40 h-5" />
+                                <Skeleton className="w-40 h-7" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 w-full">
+                            <Skeleton className="w-48 h-5" />
+                            <Skeleton className="w-40 h-5" />
+                            <Skeleton className="w-44 h-5" />
+                            <Skeleton className="w-56 h-6 rounded-md" />
+                            <Skeleton className="w-56 h-6 rounded-md" />
+                        </div>
+                    </CardContent>
+                </Card>
             ) : (
                 <Card className="shadow-lg">
                     <CardContent className="p-6 grid md:grid-cols-2 gap-6">
